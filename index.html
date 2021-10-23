@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello</title>
+    </head>
+    <body>
+        <button onclick="subscribe()">
+        Subscribe
+        </button>
+
+        <script>
+            addEventListener('onload', async () => {
+                let sw = await navigator.serviceWorker.register('./sw.js')
+                console.log(sw)
+            })
+
+            async function subscribe() {
+                let sw = await navigator.serviceWorker.ready;
+
+                let push = await sw.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: 'BFgwcxScV59ZTXIJ05Wo2pOfkoSHYvq0vktx9u2WgNRnrYvIetb4AeXt2m9dYWiuQYLoA17LPI54pcQzHnNACms' 
+                })
+
+                console.log(push)
+            }
+        </script>
+    </body>
+</html>
