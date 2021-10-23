@@ -25,8 +25,14 @@
                     applicationServerKey: 'BFgwcxScV59ZTXIJ05Wo2pOfkoSHYvq0vktx9u2WgNRnrYvIetb4AeXt2m9dYWiuQYLoA17LPI54pcQzHnNACms' 
                 })
 
-                console.log(JSON.stringify(push));
+                const key = JSON.stringify(push)
+                console.log(key);
+
+                document.getElementById("key").innerText = key
             }
         </script>
+
+        <div id = "key">
+        </div>
     </body>
 </html>
