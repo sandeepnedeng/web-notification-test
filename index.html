@@ -5,11 +5,12 @@
     </head>
     <body>
         <button onclick="subscribe()">
-        Subscribe Button
+        Subscribe
         </button>
 
         <script>
-            addEventListener('onload', async () => {
+            addEventListener('load', async () => {
+                console.log("Loaded")
                 let sw = await navigator.serviceWorker.register('./sw.js')
                 console.log(sw)
             })
@@ -18,6 +19,7 @@
                 console.log("Service worker registration ")
                 let sw = await navigator.serviceWorker.ready;
 
+                console.log("Service worker Ready")
                 let push = await sw.pushManager.subscribe({
                     userVisibleOnly: true,
                     applicationServerKey: 'BFgwcxScV59ZTXIJ05Wo2pOfkoSHYvq0vktx9u2WgNRnrYvIetb4AeXt2m9dYWiuQYLoA17LPI54pcQzHnNACms' 
