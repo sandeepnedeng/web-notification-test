@@ -15,6 +15,7 @@
             })
 
             async function subscribe() {
+                console.log("Service worker registration ")
                 let sw = await navigator.serviceWorker.ready;
 
                 let push = await sw.pushManager.subscribe({
